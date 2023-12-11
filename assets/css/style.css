@@ -1,0 +1,1352 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'FiraGO-light';
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+    border:0!important;
+}
+/* button */
+
+.float-left {
+    float: left;
+}
+.clear {
+    clear: both;
+}
+.btnhover{
+    width: fit-content;
+    cursor: pointer;
+    overflow: hidden;
+    padding: Max(0.5vw, 8px) Max(0.7vw, 8px)!important;
+    display: inline-block;
+    user-select: none;
+    position: relative;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 5vw;
+
+}
+.btnhover span {
+    color: black;
+    font-family: 'firaGo-light';
+    font-size: Max(1vw, 10px);
+    position: relative;
+    z-index: 1;
+    color: #2C2147;
+}
+
+
+.ripple{
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    background-color: #6940b6;
+    transform: translate(-50%, -50%);
+    animation: explode 3s ease forwards;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+@keyframes explode {
+    to{
+        width: 700px;
+        height: 700px;
+        background-color: rgba(189, 166, 224, 0.9);
+    
+    }
+}
+
+
+.header{
+    background-image:url('../images/Asset\ 133.png');
+    background-size: cover;
+    width: 100%;
+    position: relative;
+}
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5); 
+    pointer-events: none; 
+ 
+  }
+.header-top{
+    background-color: black;
+}
+.header-left{
+    display: flex;
+    align-items: center;
+    padding: 7px;
+}
+.header-left ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+.header-left ul li a {
+    padding: 10px;
+    color: white;
+    font-family: 'firaGo-semiBold';
+    font-size: Max(1.2vw, 12px);
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+.header-left ul li a:hover{
+    color: blueviolet;
+    text-decoration: none;
+}
+.header-left img{
+    width: 100px;
+    height: 70px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+.mag {
+    display: flex;
+    justify-content:right;
+    padding-right: 30px;
+}
+/* ძებნის ველი */
+#s{
+    background-color: transparent;
+    outline: none;
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+/* ძებნის ღილაკი */
+#searchsubmit{
+    width: 30px;
+    height: 30px;
+    transition: 0.4s;
+}
+#searchsubmit img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.con{
+    display: flex;
+    align-items: center;
+}
+.contact{
+    background-image: url(../images/Asset\ 12.png);
+    background-position-x: -30px;
+    background-position-y:-10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: solid white 1px;
+    border-radius:25px;
+    justify-content: center; 
+}
+.contact a{
+    display: block;
+    color: white;
+    font-size: Max(1.2vw, 12px);
+    font-family: 'firaGo-semiBold';
+    text-decoration: none;
+    padding: 15px;
+    transition: 0.3s;
+}
+.contact a:hover{
+    color: blueviolet;
+}
+.asa{
+    padding: 5px;
+}
+.asa p{
+    margin: 0;
+    color: white;
+    font-size: 10px;
+    transition: 0.3s;
+}
+.asa p:hover{
+    color: blueviolet;
+}
+.header-bottom{
+}
+.header-bottom img {
+    aspect-ratio: 3 / 1;
+    min-height: 200px;
+    object-fit: cover;
+    border-radius: 0;
+}
+.header-bottom{
+    position: relative;
+}
+.header-bottom .card-img-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.header-bottom h1 {
+    font-size: Max(3.2vw, 30px);
+    color: white;
+    font-family: 'firaGo-semiBold';
+    transition: 0.3s;
+}
+.header-bottom .card-text {
+    font-size: Max(1.5vw, 12px);
+    color: white;
+    font-family: 'firaGo-light';
+    transition: 0.3s;
+}
+.header-bottom h1:hover{
+    color: blueviolet;
+    
+}
+.header-bottom .card-text:hover{
+    color: blueviolet;
+}
+.menu img{
+    display: none;
+}
+@media (max-width: 1400px) { 
+    .header-bottom.container-xl {
+        padding-left: 0!important;
+        padding-right: 0!important;
+    } 
+}
+@media only screen and (max-width: 768px) { 
+    header {
+        position: relative;
+    }
+    .header-left ul {
+        /*display: none;*/
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: black;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-end;
+        text-align: right;
+        z-index: 111;
+    }
+    .header-left ul li {
+        height: 0;
+        line-height: Max(2.5vw, 40px);
+        overflow: hidden;
+    }
+    .header-left ul.active li {
+        height: Max(2.5vw, 40px);
+    }
+    .menu img {
+        display: block;
+        height: 30px;
+    }
+}
+
+  
+  @media  (max-width: 450px) {
+    body{
+        width: 100%;
+    }
+    
+    .header{
+        width: 100%;
+    
+    }
+    .logo{
+        width: 50%;
+    }
+    .header-top{
+        display: flex;
+        justify-content: space-between;
+    }
+    .con .contact{
+        display: none;
+    }
+    .con .asa{
+        display: none;
+    }
+    .mag img{
+        display:none;
+    }
+    .header-bottom .card-text {
+        display: none;
+    }
+  }
+  @media  (max-width: 375px) {
+    body{
+        width: 100%;
+    }
+    .header{
+        width: 100%;
+    }
+    .logo{
+        width: 50%;
+    }
+    
+    .con .contact{
+        display: none;
+    }
+    .con .asa{
+        display: none;
+    }
+    .mag img{
+        display:none;
+    }
+    .header-bottom .h1{
+        font-size: 60px;
+    }
+
+  }
+  @media  (max-width: 320px) {
+    body{
+        width: 100%;
+    }
+    .header{
+        width: 100%;
+    }
+    .logo{
+        width: 50%;
+    }
+    .con .contact{
+        display: none;
+    }
+    .con .asa{
+        display: none;
+    }
+    .mag img{
+        display:none;
+    }
+  }
+
+
+
+.box2 h2 {
+    margin: 70px 0;
+    font-size:max(3.2vw, 40px);
+    text-align: center;
+}
+.location_photo img {
+    width:100%;
+    height: 100%;
+}
+.box2 h2 a{
+    color:#2C2147;
+    text-decoration: none;
+    font-family: 'firaGo-semiBold';
+}
+.box2_in div {
+    aspect-ratio: 0.9/1;
+    position: relative;
+}
+.box2_in div .location_photo {
+    position: absolute;
+    z-index: 1;
+}
+.box2_in div .location_photo img{
+    border-radius: 10px;
+    object-fit: cover;
+}
+.box2_in div h3 a{
+    color: white;
+    text-decoration: none;
+    font-size:max(1vw, 18px);
+    font-family: 'firaGo-light';
+}
+.location_title {
+    position: absolute;    
+    display: block;
+    z-index: 2;
+    left:0;
+    bottom:0;
+    width: 100%;
+    padding:0 0 20px 15px;
+    margin-bottom:0;
+    border-radius: 10px;
+    background-image: linear-gradient( rgba(255,0,0,0), rgb(0, 0, 0));
+
+}
+.location_title .search_pin {
+    width:12px;
+}
+.location_title::after {
+    content:"";
+    background-color: white;
+    display: block;
+    margin-top: 5px;
+    width: 110px;
+    height: 2px;
+}
+
+
+.pink {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pink a{
+    font-size: max(3.2vw, 40px);
+    color: #2C2147;
+    font-family: 'firaGo-semiBold';
+    text-align: center;
+    text-decoration: none;
+}
+.line1{
+    display: flex;
+    justify-content: center;
+}
+.top{
+    border-top: 1px solid gray;
+}
+.lorem p {
+    font-size: Max(1vw, 10px);
+    margin-bottom: 0;
+    color: #544966;
+    font-family: 'firaGo-semiBold';
+}
+.image1 {
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  position: relative;
+  aspect-ratio: 2 / 0.8;
+  padding: 0!important;
+}
+.overview {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); 
+    border-radius: 10px;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 100%;
+}
+.title{
+    color: white;
+    width: fit-content;
+    position: relative;
+    
+}
+.title p{
+    font-size: 30px;
+    text-align: center;
+    font-family: 'firaGo-semiBold';
+    z-index: 1;
+    position: relative;
+}
+
+
+
+@media  (max-width:770px){
+    .top{
+        align-items: center;
+        
+       }
+    .lorem{
+        text-align: center;
+        width: 100%;
+       }
+    .lorem p{
+        text-align: center;
+    }
+    .pink{
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 15px;
+        width: 100%;
+        border-radius: 0%;
+       }
+}
+@media (max-width:488px){
+    .title p{
+        font-size: 25px;
+    }
+}
+@media  (max-width:440px){
+    .vrclad a {
+        font-size: 13px;
+    }
+}
+@media (max-width:425px){
+    .pink {
+        border-right: 0;
+        padding-top: 10px;
+    }
+   .top{
+    align-items: center;
+   }
+   .pink{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+   }
+   .title p{
+    font-size: 20px;
+}
+}
+@media (max-width:375px){
+    .vrclad a {
+        font-size: 10px;
+    }
+}
+@media (max-width:350px){
+    .title p{
+        font-size: 17px;
+    }
+    .vrclad a {
+        font-size: 8px;
+    }
+}
+
+
+.feri {
+    background-color: #19181a;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    background: linear-gradient(to top right, #372455, #191821 15%,#191821 70%, #212150);
+    margin-top: 30px;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+.touringermany {
+}
+.surati img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.texti1 h2 {
+    font-size: max(3.2vw, 40px);
+    font-family: 'firaGo-semiBold';
+}
+
+
+.texti1 .h {
+    text-align: left;
+    color: white;
+}
+
+.texti1 .hh {
+    text-align: right;
+    color: white;
+}
+
+.texti1 {
+    padding-top: 70px;
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family: 'firaGo-light';
+    font-size: Max(1vw, 10px);
+}
+.texti1 p {
+    font-family: 'firaGo-light';
+    color: white;
+    text-align: start;
+}
+.btn1 {
+    width: 230px;
+    height: 45px;
+    margin-top: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-family: 'firaGo-light';
+    border: solid 1px;
+    background-image: url(../images/Asset\ 4.png);
+    background-size: 100px;
+    background-repeat: no-repeat;
+}
+
+.btn1:hover {
+    color: white !important;
+    font-weight: bold;
+}
+
+.btn2 {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: #4f3db1;
+    color: white;
+    font-family: 'firaGo-light';
+    font-size: Max(1vw, 10px);
+    padding: 6px;
+    background: linear-gradient(to top right, #4f3db1, #6c41b6);
+}
+
+p .\27AD {
+    font-size: 200px;
+    font-family: 'firaGo-light';
+}
+
+.turi {
+    display: flex;
+    position: absolute;
+    right: -20px;
+    bottom: -20px;
+}
+
+.turi p {
+    background-color: white;
+    text-align: start;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: Max(1vw, 10px);
+    width: 300px;
+    font-size: 15px;
+    color: #2c2147;
+    font-family: 'firaGo-light';
+    padding: 12px 27px;
+    margin-bottom: 0;
+}
+.surati {
+    position: relative;
+}
+.fasi {
+    font-size: 13px;
+}
+
+
+.blocktitle h2 {
+    color: #2C2147;
+    font-family: 'firaGo-semiBold';
+    font-size: max(3.2vw, 40px);
+}
+.toursbycountry {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: Max(1vw, 8px);
+    height: 70vh;
+} 
+@media only screen and (max-width: 600px) {
+    .toursbycountry {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        height: auto;
+    }
+    
+  }
+.btn-see-more {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    background-color: white;
+    color: #333;
+    font-family: 'firaGo-light';
+    width: 35%;
+    margin-left: 30px;
+}
+.photo-container {
+    position: relative;
+    overflow: hidden;
+}
+.photo-container:first-child{
+    grid-row: 1 / 3;
+
+}
+.photo-container img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.photo-container1 {
+    position: relative;
+    overflow: hidden;
+}
+.photo-container1 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.btn-see-more:hover {
+    color: white;
+    font-weight: bold;
+}
+
+
+.city_container {
+    color: #544966;
+}
+.city {
+    margin-bottom: 10px;
+}
+
+.city_image {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.city_image img {
+    width: 100%;
+    aspect-ratio: 1.8 / 2;
+    object-fit: cover;
+}
+
+.Hello {
+    font-size: 50px;
+    align-self: flex-start;
+    
+}
+.Hello h2 {
+    font-family: 'firaGo-semiBold';
+    font-weight: bold !important;
+    color: #2C2147;
+    font-size: max(3.2vw, 40px);
+    text-align: center;
+}
+
+.city_title h3 a {
+    font-size: Max(2vw, 24px);
+    font-family: 'FiraGO-light';
+    font-weight: bold;
+    color: #38265d;
+    text-decoration: none;
+    margin-top: Max(1vw, 12px);
+    display: inline-block;
+}
+
+.city_title p a {
+    color: #645186;
+    font-family: 'FiraGO-light';
+    text-decoration: none;
+    font-size: Max(1vw, 10px);
+}
+.city_title a {
+    color: #544966;
+    font-family: 'FiraGO-light';
+    text-decoration: none;
+}
+.blog_image_single {
+    aspect-ratio: 1.8 / 2;
+    object-fit: cover;
+    margin: 0 16px 16px 0;
+}
+
+footer {
+    background-color: #0F0F0E;
+    padding: 20px;
+}
+.footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.footer .logo img {
+    height: 60px;
+}
+
+.footer ul.menu{
+    list-style: none;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    list-style: none;
+}
+.footer ul.menu li a {
+    padding: 10px;
+    color: white;
+    font-family: 'firaGo-semiBold';
+    font-size: Max(1.2vw, 12px);
+    text-decoration: none;
+    transition: 0.3s;
+    display: inline-block;
+}
+.footer ul.menu li a:hover{
+    color: blueviolet;
+    text-decoration: none;
+}
+.socials {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3px;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.socials li a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials li a svg {
+    height: 20px;
+    fill: #fff;
+}
+
+.socials li a:hover svg {
+    fill: blueviolet;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.footer-content1 {
+        flex-direction: column;
+        align-items: center;
+    }
+	.city_title {
+        text-align: center;
+    }
+	.city_image {
+        border-radius: 10px;
+    }
+	.city_footer_image img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .city_title h3 {
+        font-size: 2em;
+    }
+
+    .footer-content a {
+        font-size: 1.5em;
+    }
+
+    .footer-content1 h3 {
+        font-size: 1.2em;
+    }
+	.footer-content,
+    .city_footer_image {
+        flex: 100%;
+    }
+}
+
+
+
+.aboutus {
+    background-color: #2e2e35;
+    min-height: 80vh;
+    color: #fff;
+    font-family: 'firaGo-semiBold';
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.aboutus>div {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
+.category {
+    display: inline-block;
+    background-color: #fff;
+    color: #2e2e35;
+    font-family: 'firaGo-semiBold';
+    padding: 5px 10px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    font-size: 12px;
+    border: none;
+}
+
+.aboutus h1 {
+    font-size: max(2vw, 30px);
+    margin-bottom: 50px;
+    font-family: 'firaGo-semiBold';
+}
+
+.aboutus p {
+    font-size: Max(1vw, 15px);
+    font-family: 'firaGo-semiBold';
+}
+
+#slogan {
+    font-size: 12px;
+    margin-top: 100px;
+    font-family: 'firaGo-semiBold';
+}
+
+
+.resiz{
+    resize: none;
+
+} 
+
+.cont_h3{
+    font-size: 25px !important;
+}
+
+.wpcf7-response-output{
+    display: none;
+}
+.lab1{
+    color: white;
+}
+.contactbackground {
+    background-color: #272328 !important;
+}
+.contactbackground h3 {
+    color: #fff;
+    font-family: 'FiraGO-light';
+    font-size: Max(1.4vw, 16px);
+    margin-bottom: 16px;
+}
+.wht {
+    width: fit-content;
+    margin: 0 auto;
+    color: white;
+    font-size: 43pt;
+    display: flex;
+    flex-direction: column;
+    font-family: 'firaGo-semiBold';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.wht:after {
+    content: "";
+    display: inline-block;
+    width: 90%;
+    height: 2px;
+    background-color: #ffffff;
+    margin-top: 15px;
+}
+.navbar-toggler {
+    background-color: gainsboro !important;
+    /* Replace with your desired color */
+    border: #969696 !important;
+}
+
+.whty div {
+    color: white;
+}
+.contact_info {
+    list-style: none;
+}
+.contact_info li,
+.contact_info li a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.contact_info li img {
+    height: 16px;
+}
+.contact_info li a:hover {
+    color: #6439ba;
+}
+
+/* form */
+
+.form-group textarea {
+    resize: none;
+    border: 1px solid #dfdfdf;
+    border-radius: 0;
+    /* Optional: Remove rounded corners */
+    background-color: transparent;
+    box-shadow: none;
+    /* Optional: Remove box shadow */
+    color: #ffffff !important;
+}
+
+.form-group textarea:focus {
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.form-group input:focus {
+    border-color: #86b7fe !important;
+
+}
+.form-group input {
+    border: none;
+    border-radius: 0;
+    /* Optional: Remove rounded corners */
+    background-color: transparent;
+    box-shadow: none;
+    /* Optional: Remove box shadow */
+    border-bottom: 1pt solid #dfdfdf !important;
+    color: #ffffff !important;
+}
+
+.form-group label {
+    border: none;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
+    color: #ffffff !important;
+    padding: .375rem .75rem;
+}
+
+.form-group input::placeholder {
+    color: white;
+}
+
+.form-group input:focus {
+    border-color: transparent;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+.custom-button {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 59px !important;
+}
+
+/* end form */
+.zoomable-image {
+    position: relative;
+    left: -15%;
+}
+
+.trad button {
+    color: #fff;
+    background-color: black;
+    border-color: black;
+}
+
+/* map */
+
+.zoomable-image {
+    overflow: hidden;
+    transform: rotate(90deg);
+    width: 700px;
+
+}
+
+.contact_page {
+    border-radius: 20px;
+    border: 1px solid white;
+    width: 150px;
+    height: 48px;
+    background-color: purple;
+    overflow: hidden;
+}
+
+.contact_page .ilust {
+    position: relative;
+    top: 10px;
+    width: 150px;
+    height: 48px;
+    background-color: black;
+    border-radius: 50% 50% 0 0;
+}
+
+.inform {
+    font-size: 9px;
+    color: white;
+}
+
+.contact_page .ilust a {
+    color: white !important;
+    position: relative;
+    top: -10px;
+    left: 10px;
+}
+
+.fas {
+    width: 24px;
+    height: 24px;
+
+}
+
+.zoomable-image img {
+    transition: transform 0.3s ease-in-out;
+    transform: scale(1.3);
+    width: 100%;
+    height: 100%;
+}
+.map{
+    transform: rotate(90deg);
+    width: 450px;
+    height: 400px;
+    position:relative;
+    right: -20% !important;
+    top: 10%;
+}
+.zomt {
+    transform: translateY(30px);
+}
+
+
+
+/* end map */
+
+.error {
+    border-left: 1pt solid #df0606 !important;
+}
+
+
+/* nav */
+
+.navbar-logo {
+    max-height: 40px;
+    /* Adjust the max-height as needed */
+}
+
+.navbar-custom {
+    background-color: #050505;
+    /* Replace with your desired color */
+}
+
+ul li .nav-whte {
+    color: white !important;
+    font-size: 14px !important;
+}
+
+.navbar-custom .navbar-nav .ml-auto .nav-link {
+    color: white;
+}
+
+.spn1{
+    font-family: 'firaGo-semiBold';
+}
+.btn:hover{
+    border-color: none;
+}
+.custom-button:hover {
+    background-color: #6940b6 !important;
+}
+
+.filters ul {
+    list-style: square;
+    color: #4f3db1;
+}
+.filters ul li a {
+    color: #2C2147;
+    font-size: Max(1vw, 10px);
+    text-decoration: none;
+    transition: 0.3s;
+}
+.filters ul li a:hover {
+    color: #4f3db1;
+}
+
+@media only screen and (min-width: 1440px) {
+    .contact a{
+        font-size: 18px;
+    }
+    .header-left ul li a,
+    .footer ul.menu li a {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 320px) {
+    .line {
+        width: 100%;
+    }
+
+    .zoomable-image {
+        left: 0;
+        width: 100%;
+        transform: rotate(0deg);
+    }
+
+
+}
+
+@media screen and (min-width: 375px) {
+ 
+    .line {
+        width: 100%;
+    }
+
+    .zoomable-image {
+        overflow: hidden;
+        transform: rotate(0deg);
+        width: 100%;
+
+    }
+
+
+}
+
+@media screen and (min-width: 425px) {
+   
+    .zoomable-image {
+        overflow: hidden;
+        transform: rotate(0deg);
+        width: 100%;
+
+    }
+
+}
+
+@media screen and (min-width: 600px) {
+  
+
+    .line {
+        width: 140pt;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+ 
+
+    .zoomable-image {
+        overflow: hidden;
+        transform: rotate(0);
+        width: 100%;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+  
+
+    .zoomable-image {
+
+        left: -20%;
+    }
+
+    .zoomable-image {
+        overflow: hidden;
+        transform: rotate(90deg);
+        width: 600px;
+
+    }
+
+
+    @media screen and (min-width: 1050px) {
+
+        .zoomable-image {
+            margin-left: 50px;
+            overflow: hidden;
+            transform: rotate(90deg);
+            width: 600px;
+        }
+
+        ul li .nav-whte {
+            font-size: 16px !important;
+        }
+    }
+}
+
+/* დავით ოღიაშვილი */
+.first-row-background {
+    /* height: 100vh; */
+    background-image: url(../images/BG.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.first-row-background h2 {
+    color: white;
+    font-family: 'firaGo-semiBold';
+}
+
+.main-picture-container {
+    position: relative;
+    height: 700px;
+}
+
+.main-picture-container img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
+
+.main-picture-container::before {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    z-index: 99999;
+    left: 60px;
+    top: calc(342px - 1.5px);
+}
+
+.main-picture-container::after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: 9999;
+    height: 700px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.main-text-container {
+    position: absolute;
+    z-index: 999999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    color: white;
+}
+
+.second-row-background {
+    background-image: url(../images/bgg.png);
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+.second-row-background p {
+    color: black;
+    text-align: center;
+    font-family: 'firaGo-semiBold';
+}
+
+.food-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.decorational-shape {
+    width: 60%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.menus-href {
+    border: 1px dotted black;
+    color: black;
+    font-family: 'firaGo-semiBold';
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.menus-href:hover {
+    background-color: blueviolet; 
+    color:white;
+    font-family: 'firaGo-semiBold';
+}
+
+@media only screen and (max-width: 1440px) {
+    .main-picture-container::before {
+        display: none;
+    }
+}
